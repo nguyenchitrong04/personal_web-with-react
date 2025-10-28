@@ -360,7 +360,7 @@ const Hero = () => {
                 <h2 className="text-3xl sm:text-4xl font-light text-gray-300 mb-6">
                     Sinh viên <span style={{fontWeight: 'normal'}}>Đại học Khoa học Tự nhiên</span>
                     <span style={{color: 'var(--primary)', margin: '0 0.5rem'}}>|</span>
-                    Công nghệ Vật Lý Điện tử và Tin học
+                    Khoa Công nghệ Vật Lý Điện tử và Tin học
                 </h2>
                 <p className="text-lg text-gray-400 mb-2 max-w-lg"><span className="font-medium text-primary">Email:</span> nguyenchitrong04@gmail.com</p>
                 <p className="text-lg text-gray-400 mb-8 max-w-lg"><span className="font-medium text-primary">Địa chỉ:</span> 73 Nguyễn Huệ, Phan Thiết, Bình Thuận</p>
@@ -392,7 +392,12 @@ const About = () => (
                 Hướng đến việc phát triển bản thân thông qua làm việc trong môi trường chuyên nghiệp để học hỏi, tích lũy thêm kinh nghiệm và phát triển kỹ năng.
             </p>
             <h3 className="text-2xl font-semibold text-primary mt-8 mb-4">Sở Thích</h3>
-            <div className="flex flex-wrap gap-4 cv-item">
+            <div className="cv-item" 
+                style={{
+                    display: 'flex', 
+                    gap: '1rem', 
+                    flexWrap: 'wrap' 
+                }}>
                 <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">Nghe nhạc</span>
                 <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">Visual novel</span>
             </div>
