@@ -357,7 +357,11 @@ const Hero = () => {
             <div className="md:w-1/2">
                 <p className="text-xl text-secondary font-semibold mb-3 animate-pulse">Xin chào, tôi là</p>
                 <h1 className="text-6xl sm:text-7xl font-extrabold leading-tight mb-4 text-primary">NGUYỄN CHÍ TRỌNG</h1>
-                <h2 className="text-3xl sm:text-4xl font-light text-gray-300 mb-6">Sinh viên Công nghệ Vật Lý Điện tử và Tin học</h2>
+                <h2 className="text-3xl sm:text-4xl font-light text-gray-300 mb-6">
+                    Sinh viên <span style={{fontWeight: 'normal'}}>Đại học Khoa học Tự nhiên</span>
+                    <span style={{color: 'var(--primary)', margin: '0 0.5rem'}}>|</span>
+                    Công nghệ Vật Lý Điện tử và Tin học
+                </h2>
                 <p className="text-lg text-gray-400 mb-2 max-w-lg"><span className="font-medium text-primary">Email:</span> nguyenchitrong04@gmail.com</p>
                 <p className="text-lg text-gray-400 mb-8 max-w-lg"><span className="font-medium text-primary">Địa chỉ:</span> 73 Nguyễn Huệ, Phan Thiết, Bình Thuận</p>
                 <div className="flex space-x-4">
