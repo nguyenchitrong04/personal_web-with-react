@@ -61,6 +61,13 @@ const styles = {
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .animate-spin-slow { animation: spin 8s linear infinite; }
         .loading-spin { animation: spin 1s linear infinite; }
+        @media (min-width: 768px) {
+    /* CSS cho Menu Desktop (Navbar) */
+    .nav-desktop {
+        display: flex; /* Bật Flexbox để căn chỉnh và tạo khoảng cách */
+        gap: 2rem; /* Tạo khoảng cách giữa các mục (tương đương space-x-8) */
+    }
+}
         .contact-form label {
     display: block;
     margin-bottom: 4px; 
@@ -289,7 +296,7 @@ const Navbar = () => {
                 <a href="#hero" className={`text-2xl font-extrabold text-primary`}>Nguyễn Chí Trọng</a>
 
                 {/* Menu Desktop */}
-                <nav className="hidden md:flex space-x-8">
+                <nav className="nav-desktop hidden md:flex space-x-8">
                     {navItems.map(item => (
                         <a key={item.href} href={item.href} className={`text-gray-400 hover:text-primary transition duration-150 font-medium ${item.highlight ? 'font-bold text-secondary' : ''}`} onClick={handleNavClick}>
                             {item.label}
