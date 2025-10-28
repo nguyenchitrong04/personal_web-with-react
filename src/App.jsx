@@ -61,8 +61,31 @@ const styles = {
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .animate-spin-slow { animation: spin 8s linear infinite; }
         .loading-spin { animation: spin 1s linear infinite; }
+        .contact-form label {
+    display: block;
+    margin-bottom: 4px; 
+    font-size: 0.875rem; 
+    font-weight: 500;
+}
+
+/* Input và Textarea chiếm 100% chiều rộng */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; 
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #4b5563; 
+    box-sizing: border-box;
+    background-color: #374151;
+    color: white;
+}
+
+/* Căn chỉnh khoảng cách giữa các nhóm trường */
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
     `,
-    // CSS modules cho các component (dùng Tailwind classes trực tiếp trong JSX để đơn giản hóa)
 };
 // --- 1. useTheme ---
 const useTheme = () => {
@@ -654,43 +677,55 @@ const Contact = () => {
     };
 
     return (
-        <section id="lien-he" className="py-20">
-            <h2 className={`text-4xl font-bold text-center mb-12 border-b-4 border-secondary inline-block pb-2`}>Liên Hệ</h2>
-            <div className="max-w-xl mx-auto card">
-                <p className="text-lg text-center text-gray-400 mb-6">
-                    Hãy liên hệ với tôi qua email hoặc điện thoại để thảo luận về cơ hội làm việc hoặc hợp tác!
-                </p>
+    <section id="lien-he" className="py-20">
+        <h2 className="text-4xl font-bold text-center mb-12 border-b-4 border-secondary inline-block pb-2">Liên Hệ</h2>
+
+        <div className="max-w-xl mx-auto card p-8 rounded-xl shadow-lg transition-colors duration-300">
+            <p className="text-lg text-center text-gray-400 mb-6">
+                Hãy liên hệ với tôi qua email hoặc điện thoại để thảo luận về cơ hội làm việc hoặc hợp tác!
+            </p>
+            
+            {/* THÊM CLASS CSS MỚI CHO FORM */}
+            <form onSubmit={handleSubmit} className="contact-form" id="contact-form">
                 
-                <form onSubmit={handleSubmit} id="contact-form">
-                    <div className="mb-4">
-                        <label htmlFor="name" className="block text-sm font-medium mb-1">Tên của bạn</label>
-                        <input type="text" id="name" name="name" required
-                               className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white"/>
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                        <input type="email" id="email" name="email" required
-                               className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white"/>
-                    </div>
-                    <div className="mb-6">
-                        <label htmlFor="message" className="block text-sm font-medium mb-1">Nội dung</label>
-                        <textarea id="message" name="message" rows="4" required
-                                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white"></textarea>
-                    </div>
-                    
-                    <button type="submit" className="w-full px-6 py-3 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300">
-                        Gửi Tin Nhắn
-                    </button>
-                    
-                    {formMessage && (
-                        <p className={`text-center mt-4 font-medium ${messageType === 'success' ? 'text-green-500' : 'text-gray-500'}`}>
-                            {formMessage}
-                        </p>
-                    )}
-                </form>
-            </div>
-        </section>
-    );
+                {/* TRƯỜNG 1: Tên của bạn */}
+                <div className="form-group">
+                    <label htmlFor="name">Tên của bạn</label>
+                    <input type="text" id="name" name="name" required
+                           className="focus:ring-primary focus:border-primary bg-gray-700 text-white"/>
+                </div>
+                
+                {/* TRƯỜNG 2: Email */}
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" name="email" required
+                           className="focus:ring-primary focus:border-primary bg-gray-700 text-white"/>
+                </div>
+                
+                {/* TRƯỜNG 3: Nội dung (Dùng style inline để ghi đè margin-bottom) */}
+                <div className="form-group" style={{marginBottom: '1.5rem'}}>
+                    <label htmlFor="message">Nội dung</label>
+                    <textarea id="message" name="message" rows="4" required
+                              className="focus:ring-primary focus:border-primary bg-gray-700 text-white"></textarea>
+                </div>
+                
+                {/* NÚT GỬI */}
+                <button type="submit" 
+                        className="w-full px-6 py-3 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300">
+                    Gửi Tin Nhắn
+                </button>
+                
+                {/* HIỂN THỊ THÔNG BÁO */}
+                {formMessage && (
+                    <p className={`text-center mt-4 font-medium ${messageType === 'success' ? 'text-green-500' : 'text-gray-500'}`}>
+                        {formMessage}
+                    </p>
+                )}
+            </form>
+
+        </div>
+    </section>
+);
 };
 
 // --- 8. Footer Component ---
