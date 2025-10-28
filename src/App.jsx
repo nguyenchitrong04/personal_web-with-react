@@ -360,7 +360,7 @@ const Hero = () => {
                 <h2 className="text-3xl sm:text-4xl font-light text-gray-300 mb-6">
                     Sinh viên <span style={{fontWeight: 'normal'}}>Đại học Khoa học Tự nhiên</span>
                     <span style={{color: 'var(--primary)', margin: '0 0.5rem'}}>|</span>
-                    Khoa Công nghệ Vật Lý Điện tử và Tin học
+                    Ngành Công nghệ Vật Lý Điện tử và Tin học
                 </h2>
                 <p className="text-lg text-gray-400 mb-2 max-w-lg"><span className="font-medium text-primary">Email:</span> nguyenchitrong04@gmail.com</p>
                 <p className="text-lg text-gray-400 mb-8 max-w-lg"><span className="font-medium text-primary">Địa chỉ:</span> 73 Nguyễn Huệ, Phan Thiết, Bình Thuận</p>
