@@ -748,8 +748,8 @@ const Contact = () => {
 const Footer = () => (
     <footer className="footer shadow-inner mt-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 py-8 text-center text-gray-400">
-            <p>&copy; 2024 Nguyễn Chí Trọng. Mọi quyền được bảo lưu.</p>
-            <p className="mt-2 text-sm">Thiết kế với ❤️ và React (từ Tailwind gốc).</p>
+            <p>&copy; 2025 Nguyễn Chí Trọng. Mọi quyền được bảo lưu.</p>
+            <p className="mt-2 text-sm">Thiết kế với sự tận tâm ❤️ và React .</p>
         </div>
     </footer>
 );
